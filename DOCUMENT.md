@@ -16,4 +16,5 @@ PROYECTO-AUTORIZACIÓN
 |   └── Singleton-JWS.js // Generación y verificación de los Jason Web Tokens
 ├── index.js // Punto de entrada de la aplicación
 ├── package.json // Dependencias y configuración del proyecto
-├── packagee-lock.json
+├── package-lock.json
+```
