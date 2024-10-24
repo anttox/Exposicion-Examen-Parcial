@@ -49,6 +49,7 @@ npm install jsonwebtoken
 ```
 ## 4.4 Jest
 En nuestro proyecto hemos implementado Jest en el archivo Prueba-Unitaria.js para validar que los tokens se generen correctamente y se lancen errores si el token es inválido. El porque es muy simple, Jest al ser uin marco de pruebas de Javascript nos permite escribir y ejecutar pruebas unitarias para que se valide cada parte del sistema. 
+
 *Instalación*
 ```bash
 npm install --save-dev jest
