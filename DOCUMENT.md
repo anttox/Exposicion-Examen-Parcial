@@ -42,5 +42,19 @@ Bcryptjs nos permite encriptar contraseñas antes de almacenarlo en el sistema. 
 ```bash
 npm install bcryptjs
 ```
-
+## 4.3 JSON Web Tokens (JWT)
+Utilizamos JWT para realizar la autenticacion basada en tokens, ya que permite a los usuarios iniciar sesion y que puedan recibir un token que valida su identidad en futuras peticiones, de esta manera JWT garantiza la integridad del usuario durante una sesión sin necesidad de almacenar datos sensibles edl lado del servidor.
+```bash
+npm install jsonwebtoken
+```
+## 4.4 Jest
+En nuestro proyecto hemos implementado Jest en el archivo Prueba-Unitaria.js para validar que los tokens se generen correctamente y se lancen errores si el token es inválido. El porque es muy simple, Jest al ser uin marco de pruebas de Javascript nos permite escribir y ejecutar pruebas unitarias para que se valide cada parte del sistema. 
+*Instalación*
+```bash
+npm install --save-dev jest
+```
+*Ejecución de pruebas unitarias*
+```bash
+npm test
+```
 
