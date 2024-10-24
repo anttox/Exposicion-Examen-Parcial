@@ -24,3 +24,11 @@ PROYECTO-AUTORIZACIÓN
 En nuestro proyecto como ya hemos mencionado hacemos uso de JWT para la gestión de sesiones, donde canda usuario al identificarse recibe un token JWT que le sirve para acceder a recursos protegidos. Además, hemos implementado un control de acceso basado en roles (RBAC) para limitar a los usuarios el acceso a ciertas rutas.
 ## 2.1 Uso de JWT para Sesiones (Singleton)
 Hemos implementado un patrón de diseño denominado Singleton que nos garantiza que solo exista una isntancia del JWT Manager en toda la aplicación, evitando problemas de múltiples instancias y garantizando un manejo seguro de los tokens.
+## 2.2 Control de Acceso Basado en Roles (RBAC)
+El acceso a rutas protegidas protegidas estará delimitada según el rol del usuario, por eso creamos el Middleware que nos permitirá verficar el token y el rol del usuario.
+
+# 3. Pruebas Unitarias
+Realizamos pruebas unitarias en Jest para validar el correcto funcionamiento del sistema, por elo gracias a Jest podemos hacer pruebas de generación de tokes y validación de tokens JWT.
+
+# 4. Guía de Integración 
+Instalación 
