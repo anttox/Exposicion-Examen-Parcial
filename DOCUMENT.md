@@ -65,7 +65,7 @@ En esta parte explicaremos cómo el sistema maneja los errores más comunes para
 ## 5.1 Falta de token
 El middleware verificacionToken devolvera un error 403 Forbidden si no se proporciona un token.
 ## 5.2 Formato incorrecto del token
-Si existe el caso de que el token no sigue el formato Bearer <token>, se retornará un error 400 Bad Request.
+Si existe el caso de que el token no sigue el formato Bearer "token", se retornará un error 400 Bad Request.
 ## 5.3 Token manipulado o expirado
 Si el token es manipulado o ha expirado, la función verificacionToken lanzará un error 401 Unauthorized.
 ## 5.4 Acceso denegado por el rol del usuario (RBAC)
