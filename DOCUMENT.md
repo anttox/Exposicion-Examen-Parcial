@@ -24,7 +24,9 @@ PROYECTO-AUTORIZACIÓN
 En nuestro proyecto como ya hemos mencionado hacemos uso de JWT para la gestión de sesiones, donde canda usuario al identificarse recibe un token JWT que le sirve para acceder a recursos protegidos. Además, hemos implementado un control de acceso basado en roles (RBAC) para limitar a los usuarios el acceso a ciertas rutas.
 ## 2.1 Uso de JWT para Sesiones (Singleton)
 Hemos implementado un patrón de diseño denominado Singleton que nos garantiza que solo exista una isntancia del JWT Manager en toda la aplicación, evitando problemas de múltiples instancias y garantizando un manejo seguro de los tokens.
-## 2.2 Control de Acceso Basado en Roles (RBAC)
+## 2.2 Patrón de Diseño Facade
+Facade es un patrón de diseño estrcutural, es dcir que nos va a proporcionar una interfaz simplificada o un punto de entrada único para acceder a varias funcionalidades complejas de un sistema, esto podemos visualizarlo en mi archivo Controlador-Autenticacion.js donde agrupo diferentes funcionalidades, como el registro y el login. En lugar de tener estas operaciones dispersas por toda la aplicación, las encapsulé dentrod el controlador, y de esta manera el controlador actúa como un punto de entrada simplificado para todas las acciones relacionadas con la autenticación. Como ejemplo tenemos a mi API principal index.js donde simplemente llamamos al controlador para realizar las operaciones necesarios, sin preocuparnos por los detalles internos como el hashing o el manejo de los JWT.
+## 2.3 Control de Acceso Basado en Roles (RBAC)
 El acceso a rutas protegidas protegidas estará delimitada según el rol del usuario, por eso creamos el Middleware que nos permitirá verficar el token y el rol del usuario.
 
 # 3. Pruebas Unitarias
