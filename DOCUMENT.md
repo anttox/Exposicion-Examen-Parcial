@@ -30,7 +30,7 @@ Facade es un patrón de diseño estrcutural, es dcir que nos va a proporcionar u
 El acceso a rutas protegidas protegidas estará delimitada según el rol del usuario, por eso creamos el Middleware que nos permitirá verficar el token y el rol del usuario.
 
 # 3. Pruebas Unitarias
-Realizamos pruebas unitarias en Jest para validar el correcto funcionamiento del sistema, por elo gracias a Jest podemos hacer pruebas de generación de tokes y validación de tokens JWT.
+Realizamos pruebas unitarias en Jest para validar el correcto funcionamiento del sistema, por eso gracias a Jest podemos hacer pruebas de generación de tokes y validación de tokens JWT.
 
 # 4. Guía de Integración 
 Para la correcta ejecución de este proyecto, hemos usado herramientas del curso como Node.js y Express, ademas del plus como JWT, ya que nos permite instalar dependencias importantes para su correcta ejecución que en el trasncuro del documento explicaremos la importancia de las librerías utilizadas, así como los comandos para instalarlos.
@@ -50,7 +50,7 @@ Utilizamos JWT para realizar la autenticacion basada en tokens, ya que permite a
 npm install jsonwebtoken
 ```
 ## 4.4 Jest
-En nuestro proyecto hemos implementado Jest en el archivo Prueba-Unitaria.js para validar que los tokens se generen correctamente y se lancen errores si el token es inválido. El porque es muy simple, Jest al ser uin marco de pruebas de Javascript nos permite escribir y ejecutar pruebas unitarias para que se valide cada parte del sistema. 
+En nuestro proyecto hemos implementado Jest en el archivo Prueba-Unitaria.js para validar que los tokens se generen correctamente y se lancen errores si el token es inválido. El porque es muy simple, Jest al ser uin marco de pruebas de Javascript nos permite escribir y ejecutar pruebas unitarias para que se valide cada parte del sistema. Recordar que Jest por defecto cuando hace una busqueda de pruebas unitarias en los archivos, estos deben estar nombrados uusando .test.js o .spec.js.
 
 *Instalación*
 ```bash
@@ -60,4 +60,15 @@ npm install --save-dev jest
 ```bash
 npm test
 ```
-
+# 5. Manejo de errores (Pruebas de Seguridad)
+En esta parte explicaremos cómo el sistema maneja los errores más comunes para evitar vulnerabilidades
+## 5.1 Falta de token
+El middleware verificacionToken devolvera un error 403 Forbidden si no se proporciona un token.
+## 5.2 Formato incorrecto del token
+Si existe el caso de que el token no sigue el formato Bearer <token>, se retornará un error 400 Bad Request.
+## 5.3 Token manipulado o expirado
+Si el token es manipulado o ha expirado, la función verificacionToken lanzará un error 401 Unauthorized.
+## 5.4 Acceso denegado por el rol del usuario (RBAC)
+Validaremos que el rol del usuario coincida con el requerido (admin). Si no coincide, se retornará el error 403 Forbidden.
+## 5.5 Hashing 
+Usamos bcrypt para poder almacenar las contraseñas de manera segura, gracias a esto podremos protegernos contra ataques de fuerza bruta.
