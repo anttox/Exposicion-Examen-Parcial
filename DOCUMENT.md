@@ -31,4 +31,16 @@ El acceso a rutas protegidas protegidas estará delimitada según el rol del usu
 Realizamos pruebas unitarias en Jest para validar el correcto funcionamiento del sistema, por elo gracias a Jest podemos hacer pruebas de generación de tokes y validación de tokens JWT.
 
 # 4. Guía de Integración 
-Instalación 
+Para la correcta ejecución de este proyecto, hemos usado herramientas del curso como Node.js y Express, ademas del plus como JWT, ya que nos permite instalar dependencias importantes para su correcta ejecución que en el trasncuro del documento explicaremos la importancia de las librerías utilizadas, así como los comandos para instalarlos.
+## 4.1 Express
+En nuestro proyecto hemos usado Express para poder definir rutas principales como /loginb y /amind, de esta forma podremos gestionar las peticiones HTTP de manera eficiente.
+```bash
+npm install express
+```
+## 4.2 bcryptjs
+Bcryptjs nos permite encriptar contraseñas antes de almacenarlo en el sistema. Esto es muy importante para asegurarnos de que las contraseñas no se guarden en texto plano y proteger la aplicación de ataques de fuerza bruta o filtraciones de datos. Ademmás en nuestro proyecto utilizamos bcrypt para poder hacer comparaciones de contraseñas en texto plano que se ingresan durante el login con las contraseñas encriptadas y almacenas en la base de datos.
+```bash
+npm install bcryptjs
+```
+
+
